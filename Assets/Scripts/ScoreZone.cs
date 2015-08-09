@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class ScoreZone : MonoBehaviour {
+
+	public Ball ball;
 
 	void OnTriggerEnter(Collider other)
 	{
-		Destroy (other.gameObject);
+		ball.Reset ();
 	}
 }

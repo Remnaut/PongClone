@@ -25,4 +25,17 @@ public class Ball : MonoBehaviour {
 
 		}
 	}
+
+	public void Reset()
+	{
+		if (transform.position.x < 0) {
+			GM.instance.PlayerScore ();
+		} else if (transform.position.x > 0) {
+			GM.instance.AiScore ();
+		}
+		ballInPlay = false;
+		rb.velocity = new Vector3 (0f, 0f, 0f);
+		transform.position = new Vector3 (0f, 0f, 0f);
+
+	}
 }
